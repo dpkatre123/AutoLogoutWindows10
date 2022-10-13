@@ -1,0 +1,17 @@
+C:\Users\e538437\source\repos\LogoutWindows\bin\Debug\net6.0-windows\LogoutWindows.exe
+C:\Users\e538437\source\repos\LogoutWindows\bin\Debug\net6.0-windows\LogoutWindows.deps.json
+C:\Users\e538437\source\repos\LogoutWindows\bin\Debug\net6.0-windows\LogoutWindows.runtimeconfig.json
+C:\Users\e538437\source\repos\LogoutWindows\bin\Debug\net6.0-windows\LogoutWindows.dll
+C:\Users\e538437\source\repos\LogoutWindows\bin\Debug\net6.0-windows\LogoutWindows.pdb
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.csproj.AssemblyReference.cache
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.Form1.resources
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.csproj.GenerateResource.cache
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.AssemblyInfoInputs.cache
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.AssemblyInfo.cs
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.csproj.CoreCompileInputs.cache
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.dll
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\refint\LogoutWindows.dll
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.pdb
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\LogoutWindows.genruntimeconfig.cache
+C:\Users\e538437\source\repos\LogoutWindows\obj\Debug\net6.0-windows\ref\LogoutWindows.dll
