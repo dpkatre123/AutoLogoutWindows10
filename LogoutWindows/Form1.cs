@@ -7,17 +7,9 @@ namespace LogoutWindows
 {
     public partial class Form1 : Form
     {
-        [DllImport("wtsapi32.dll", SetLastError = true)]
-        static extern bool WTSDisconnectSession(IntPtr hServer, int sessionId, bool bWait);
-
-        [DllImport("Kernel32.dll", SetLastError = true)]
-        static extern int WTSGetActiveConsoleSessionId();
 
         [DllImport("user32.dll", SetLastError = true)]
         static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
-
-        const int WTS_CURRENT_SESSION = -1;
-        static readonly IntPtr WTS_CURRENT_SERVER_HANDLE = IntPtr.Zero;
         System.Timers.Timer logoutTimer;
         System.Timers.Timer labelUpdateTimer;
         DateTime logoutTimeEstimated = DateTime.Now;
@@ -36,34 +28,40 @@ namespace LogoutWindows
         private void initializeTimer()
         {
             lblErrorText.Text = "";
-            if (double.Parse(txtTime.Text) > 1)
+            try
             {
-                if (logoutTimer != null)
+                if (double.Parse(txtTime.Text) > 1)
                 {
-                    logoutTimer.Stop();
-                    logoutTimer.Dispose();
-                }
-                if (labelUpdateTimer != null)
-                {
-                    labelUpdateTimer.Stop();
-                    labelUpdateTimer.Dispose();
-                }
-                Thread.Sleep(1000);
-                logoutTimer = new System.Timers.Timer(double.Parse(txtTime.Text) * 60 * 1000);
-                logoutTimer.Elapsed += LogoutTimer_Elapsed;
-                logoutTimer.Enabled = true;
-                logoutTimer.Start();
+                    if (logoutTimer != null)
+                    {
+                        logoutTimer.Stop();
+                        logoutTimer.Dispose();
+                    }
+                    if (labelUpdateTimer != null)
+                    {
+                        labelUpdateTimer.Stop();
+                        labelUpdateTimer.Dispose();
+                    }
+                    Thread.Sleep(1000);
+                    logoutTimer = new System.Timers.Timer(double.Parse(txtTime.Text) * 60 * 1000);
+                    logoutTimer.Elapsed += LogoutTimer_Elapsed;
+                    logoutTimer.Enabled = true;
+                    logoutTimer.Start();
 
-                labelUpdateTimer = new System.Timers.Timer(1000);
-                labelUpdateTimer.Elapsed += LabelUpdateTimer_Elapsed;
-                labelUpdateTimer.Enabled = true;
-                labelUpdateTimer.Start();
-                logoutTimeEstimated = DateTime.Now.AddMinutes(double.Parse(txtTime.Text));
-                lblErrorText.Text = "";
-            }
-            else
+                    labelUpdateTimer = new System.Timers.Timer(1000);
+                    labelUpdateTimer.Elapsed += LabelUpdateTimer_Elapsed;
+                    labelUpdateTimer.Enabled = true;
+                    labelUpdateTimer.Start();
+                    logoutTimeEstimated = DateTime.Now.AddMinutes(double.Parse(txtTime.Text));
+                    lblErrorText.Text = "";
+                }
+                else
+                {
+                    lblErrorText.Text = "minnimum 1 min required";
+                }
+            }catch(Exception ex)
             {
-                lblErrorText.Text = "minnimum 1 min required";
+                lblErrorText.Text = ex.Message;
             }
         }
         private void updateLabel()
